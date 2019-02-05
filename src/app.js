@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const planetSelected = new SelectView(selectElement);
   planetSelected.bindEvents();
 
-  const infoDiv = document.querySelector('.planetDetails')
+  const infoDiv = document.querySelector('.planet-details')
   const planetInfoDisplay = new PlanetInfoView(infoDiv);
   planetInfoDisplay.bindEvents();
 

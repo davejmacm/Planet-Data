@@ -14,18 +14,25 @@ SolarSystem.prototype.bindEvents = function(){
   });
 
   SolarSystem.prototype.publishPlanetInfo = function(planet){
-    const selectedPlanet = this.planets.find((planet) =>{
-        return this.planets.name === planet;
-      });
+    const selectedPlanet = this.findPlanet(planet);
+
   console.log(selectedPlanet);
   PubSub.publish('SolarSystem:PlanetInfo', selectedPlanet)
-};
+    };
+
+
+SolarSystem.prototype.findPlanet = function(planetName) {
+  const foundPlanet = this.planets.find((currentPlanet) =>{
+      return currentPlanet.name === planetName;
+});
+return foundPlanet;
+    console.log(foundPlanet);
+  };
+
+  };
 
 
 
-
-
-};
 
 
 module.exports = SolarSystem;
